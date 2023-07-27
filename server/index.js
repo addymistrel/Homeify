@@ -75,14 +75,12 @@ app.post("/login", async (req, res) => {
     if (email && password) {
       const CredentialsDoc = await Credentials.findOne({ email });
       console.log(`email found - ${email}`);
-      //console.log(CredentialsDoc)
       if (CredentialsDoc) {
         const passwordOK = await bcrypt.compare(
           password,
           CredentialsDoc.password
         );
         if (passwordOK) {
-          //console.log(`password found - ${password}`)
           const UserDoc = await User.findOne({ email });
           console.log(UserDoc);
           jwtData = {
@@ -160,6 +158,37 @@ app.post("/address", async (req, res) => {
 app.post("/logout", (req, res) => {
   res.cookie("token", "").json(true);
 });
+
+app.post('/cardForm',async(req,res)=>{
+  await mongoose.connect(process.env.MONGO_URL);
+  const nameOnCard=req.body.nameOnCard;
+  const numberOnCard=req.body.numberOnCard;
+  const expiryMonthOnCard=req.body.expiryMonthOnCard;
+  const expiryYearOnCard=req.body.expiryYearOnCard;
+  const cvvOnCard=req.body.cvvOnCard;
+  const email=req.body.email;
+  try{
+    console.log("Inside try")
+    const UserData = await User.findOneAndUpdate(
+        {email},
+        {
+          $push: {paymentInfo:[{
+            nameOnCard:nameOnCard,
+            cardNumber:numberOnCard,
+            expiryMonth:expiryMonthOnCard,
+            expiryYear:expiryYearOnCard,
+            cvv:cvvOnCard,
+          }]}
+        }
+      );
+      return res.status(200).send({
+        UserData:UserData
+    });
+  }
+  catch{
+    res.status(500).send("Internal Server Error")
+  }
+})
 
 app.post("/productsFill", async (req, res) => {
   await mongoose.connect(process.env.MONGO_URL);
