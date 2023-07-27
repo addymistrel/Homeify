@@ -1,7 +1,7 @@
 /* Productlist.*/
-.sort_filter {
+/* .sort_filter {
   margin-top: 10px;
-}
+} */
 .main_product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -28,7 +28,7 @@
 
 .main_product .product_card:hover {
   opacity: 1;
-  filter: blur(0px);
+  /* filter: blur(0px); */
   cursor: pointer;
   background-color: rgb(236, 231, 224);
   color: #ff4742;
@@ -51,9 +51,10 @@
 #price {
   border: none;
   margin-right: 80%;
-  border-radius: 5px;
+  border-radius: 20%;
   background-color: rgb(9, 9, 79);
   color: #ffffff;
+  padding: 1%;
 }
 
 /* Sort*/
@@ -78,12 +79,12 @@
   cursor: pointer;
   display: inline-block;
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
+  line-height: 100%;
+  min-height: 100%;
   outline: 0;
-  padding: 12px 14px;
+  padding: 6% 8%;
   text-align: center;
   text-rendering: geometricprecision;
   text-transform: none;
@@ -107,12 +108,12 @@
   cursor: pointer;
   display: inline-block;
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
+  line-height: 100%;
+  min-height: 100%;
   outline: 0;
-  padding: 12px 14px;
+  padding: 6% 8%;
   /* text-align: center; */
   text-rendering: geometricprecision;
   text-transform: none;
@@ -126,12 +127,12 @@
   cursor: pointer;
   display: inline-block;
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
+  line-height: 100%;
+  min-height: 100%;
   outline: 0;
-  padding: 12px 14px;
+  padding: 6% 8%;
   /* text-align: center; */
   text-rendering: geometricprecision;
   text-transform: none;
@@ -139,18 +140,18 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
-  margin-left: 60%;
+  margin-left: 50%;
 }
 #sort_option {
   cursor: pointer;
   display: inline-block;
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
+  line-height: 100%;
+  min-height: 100%;
   outline: 0;
-  padding: 8px 7px;
+  padding: 4% 8%;
   margin-right: 20%;
   border-radius: 7px;
   color: #ff4742;
@@ -257,7 +258,7 @@ input[type="checkbox"]:checked + label .fas {
   margin-top: 15px;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .main_product {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -265,5 +266,31 @@ input[type="checkbox"]:checked + label .fas {
     margin-right: 5%;
     gap: 2%;
     margin-top: 2%;
+  }
+
+  .product_card {
+    height: 50%;
+    transition: transform 0.2s;
+    padding-bottom: 10%;
+  }
+  .product_card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .main_product:hover .product_card {
+    opacity: 1;
+    /* filter: blur(2px); */
+  }
+
+  .main_product .product_card:hover {
+    opacity: 1;
+    /* filter: blur(0px); */
+    cursor: pointer;
+    background-color: rgb(236, 231, 224);
+    color: #ff4742;
   }
 }

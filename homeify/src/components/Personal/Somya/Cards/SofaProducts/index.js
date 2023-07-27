@@ -183,7 +183,6 @@ function Sofas() {
   useEffect(() => {
     if (!selectedColor) {
       setProducts(sofas);
-      console.log("hiiii");
     } else {
       const filteredSofas = sofas.filter((item) => {
         return getColor(item.name_sofas) === selectedColor;
