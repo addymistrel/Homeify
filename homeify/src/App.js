@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import ProfilePage from "./components/Main/ProfileActions/ProfilePage";
 import Trends from "./components/Personal/Somya/Cards/Furniture";
-import Sofas from "./components/Personal/Somya/Cards/SofaProducts";
+import ProductsPage from "./components/Main/Products/ProductsDisplayPage";
 import TrackPage from "./components/Main/ProfileActions/TrackPage";
 import WalletPage from "./components/Main/ProfileActions/WalletPage";
 import { ErrorPage } from "./components/Main/ErrorPage/ErrorPage";
@@ -14,6 +14,7 @@ import AddressAdditon from "./components/Main/ProfileActions/AddressAdditon";
 import AllAddressPage from "./components/Main/ProfileActions/AllAddressPage";
 import CardLandingPage from "./components/Main/ProfileActions/CreditCard/CardManager/AddCard/CardLandingPage";
 import AllCards from "./components/Main/ProfileActions/AllCards"
+import SpecificProduct from "./components/Main/SpecificProduct/SpecificProduct";
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.withCredentials = true;
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/trends" element={<Trends />} />
-          <Route path="/sofas" element={<Sofas />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/orders" element={<TrackPage />} />
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/editaddress" element={<AddressAdditon />} />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/allcards" element={<AllCards />} />
           <Route path="/dummy" element={<Dummy />} />
           <Route path="/creditCard" element={<CardLandingPage/>} />
+          <Route path="/productdetails" element={<SpecificProduct/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </UserContextProvider>

@@ -1,22 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 #trend_div {
   display: grid;
-  /* grid-auto-flow: column; */
-  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-  /* padding: 2%; */
-  margin-top: 1%;
-  gap: 2%;
-  margin-left: 2%;
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(auto-fit, minmax(30%,1fr));
+    /* padding: 2%; */
+    margin-top: 1%;
+    gap: 2%;
+    margin-left: 2%;
+
 }
-.div2fur-grid {
+.div2fur-grid{
   display: flex;
   justify-content: center;
 }
 
 #collection-div {
-  display: grid;
+  display: grid ;
   grid-auto-flow: column;
-  gap: 3%;
+  gap:3%;
   margin-top: 2%;
   align-items: center;
 }
@@ -36,6 +37,7 @@
   color: #d96424;
   line-height: 1.25rem;
 }
+
 
 #trend_font {
   color: rgb(81, 81, 83);
@@ -60,6 +62,8 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding-bottom: 3%;
+  padding-top: 5%;
 }
 .item-card:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -98,12 +102,12 @@
 }
 
 @media only screen and (max-width: 1410px) {
-  #trend_div {
+  #trend_div{
     margin-left: 1%;
   }
 }
 @media only screen and (max-width: 1400px) {
-  #trend_div {
+  #trend_div{
     margin-left: 0px;
   }
 }

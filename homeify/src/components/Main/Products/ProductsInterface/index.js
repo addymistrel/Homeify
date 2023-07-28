@@ -3,7 +3,7 @@ import ActionAreaTrends from "./ActionAreaTrends";
 import ActionAreaCollection from "./ActionAreaCollection";
 import ActionAreaSponsor from "./ActionAreaSponsor";
 import "./index.css";
-import Navbar from "../../../../Main/Navbar/Navbar";
+import Navbar from "../../Navbar/Navbar";
 
 const data = [
   {
